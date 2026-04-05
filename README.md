@@ -6,7 +6,6 @@
 
 This project develops machine learning (ML) surrogate models to predict the behavior of a distillation column simulated in DWSIM. Instead of running computationally expensive simulations repeatedly, the trained ML models can quickly predict outputs based on input operating conditions.
 
-![DWSIM Flowsheet](DWSIM_Flowsheet/flowchart.png)
 
 ---
 
@@ -67,6 +66,7 @@ DWSIM_Surrogate_Project/
 │
 └── DWSIM_Flowsheet/
     └── dwsim(ben-tol).dwxml
+    └── flowchart.png
 ```
 
 ---
@@ -215,7 +215,7 @@ Evaluation metrics used: **MAE**, **RMSE**, **R²**
 
 ## Author
 
-**Ishit**
+**Ishita**
 
 ---
 

@@ -178,6 +178,72 @@ Evaluation metrics used: **MAE**, **RMSE**, **R²**
 
 ---
 
+## Model Performance & Accuracy
+
+Each model was evaluated on a held-out test set (20% of data) using three metrics:
+- **MAE** — Mean Absolute Error (lower is better)
+- **RMSE** — Root Mean Squared Error (lower is better)
+- **R²** — Coefficient of Determination (higher is better; 1.0 = perfect fit)
+
+---
+
+### xD — Distillate Composition
+
+| Model | MAE | RMSE | R² |
+|---|---|---|---|
+| **Random Forest** | **0.0007** | **0.0014** | **0.9999** |
+| XGBoost | 0.0016 | 0.0032 | 0.9994 |
+| Polynomial Regression | 0.0228 | 0.0285 | 0.9541 |
+| ANN | 0.0238 | 0.0304 | 0.9477 |
+
+---
+
+### xB — Bottoms Composition
+
+| Model | MAE | RMSE | R² |
+|---|---|---|---|
+| **Random Forest** | **0.0007** | **0.0014** | **0.9999** |
+| XGBoost | 0.0016 | 0.0032 | 0.9994 |
+| Polynomial Regression | 0.0228 | 0.0285 | 0.9541 |
+| ANN | 0.0238 | 0.0304 | 0.9477 |
+
+---
+
+### QC — Condenser Duty
+
+| Model | MAE | RMSE | R² |
+|---|---|---|---|
+| **Random Forest** | **0.1450** | **0.3342** | **0.9999** |
+| XGBoost | 0.4542 | 0.8805 | 0.9996 |
+| ANN | 6.1494 | 8.4593 | 0.9667 |
+| Polynomial Regression | 8.2216 | 9.8215 | 0.9551 |
+
+---
+
+### QR — Reboiler Duty
+
+| Model | MAE | RMSE | R² |
+|---|---|---|---|
+| **Random Forest** | **0.1450** | **0.3342** | **0.9999** |
+| XGBoost | 0.4542 | 0.8805 | 0.9996 |
+| ANN | 6.1494 | 8.4593 | 0.9667 |
+| Polynomial Regression | 8.2216 | 9.8215 | 0.9551 |
+
+---
+
+### Overall Model Ranking
+
+| Rank | Model | Avg R² | Strengths | Weaknesses |
+|---|---|---|---|---|
+| 🥇 1 | **Random Forest** | ~0.9999 | Lowest MAE & RMSE across all outputs; most consistent | Slightly slower inference than XGBoost |
+| 🥈 2 | **XGBoost** | ~0.9995 | Near-perfect accuracy; fast prediction | Marginally higher error than Random Forest |
+| 🥉 3 | **Polynomial Regression** | ~0.9546 | Simple, interpretable | Higher error; struggles with nonlinear behavior |
+| 4 | **ANN** | ~0.9572 | Theoretically flexible | Underperforms due to limited tuning and dataset size |
+
+> **Random Forest** achieves R² ≈ 0.9999 across all four output variables, making it the clear best surrogate model for this distillation column.
+
+---
+
 ## Results Summary
 
 | Model | Performance |

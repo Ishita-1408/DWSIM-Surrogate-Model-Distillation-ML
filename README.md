@@ -267,6 +267,7 @@ Each model was evaluated on a held-out test set (20% of data) using three metric
 ## Limitations
 
 - Some input variables showed limited variation, affecting feature importance analysis
+- ANN performance is sensitive to input scaling and architecture — further tuning can improve it
 - Operating space coverage can be improved with denser sampling
 
 ---
